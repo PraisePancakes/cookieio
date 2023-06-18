@@ -1,0 +1,14 @@
+@tailwind base;
+:root {
+  --main-font: 'Merriweather', serif;
+  --secondary-font: 'Oswald', sans-serif;
+}
+body {
+  font-family: var(--secondary-font);
+  background-color: black;
+}
+h1 {
+  font-family: var(--main-font);
+}
+@tailwind components;
+@tailwind utilities;
