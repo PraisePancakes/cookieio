@@ -1,25 +1,17 @@
 import React from 'react';
-import axios from 'axios';
 
-const Register = () => {
+const Login = () => {
   return (
-    <div className="REGISTER__CONTAINER relative flex flex-col items-center ">
+    <div className="LOGIN__CONTAINER relative flex flex-col items-center ">
       <div
         style={{ backgroundColor: '#7877E6' }}
         className="Top--Half-Box w-full h-[500px]"
       ></div>
-      <div className="Register--Component relative h-[25rem] w-[22rem] bottom-[13rem] bg-white border flex flex-col items-center border-black">
-        <h1 className="Register--Component-Header text-2xl mt-3">
-          Create Your Account
+      <div className="Login--Component relative h-[25rem] w-[22rem] bottom-[13rem] bg-white border flex flex-col items-center border-black">
+        <h1 className="Login--Component-Header text-2xl mt-3">
+          Log-in to Your Account
         </h1>
         <form className="mt-3 flex flex-col items-center">
-          <label className="text-xl font-thin">Whats Your Email? </label>
-          <input
-            style={{ borderColor: '#7877E6' }}
-            className="border w-[18em] focus:outline-none px-5 mt-2"
-            type="email"
-            name="email"
-          ></input>
           <label className="text-xl font-thin">Enter a Username </label>
           <input
             style={{ borderColor: '#7877E6' }}
@@ -44,4 +36,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
