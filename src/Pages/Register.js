@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
   const DEFAULT_FORM = {
@@ -8,12 +9,14 @@ const Register = () => {
     password: '',
   };
   const [form, setForm] = useState(DEFAULT_FORM);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await axios.post('http://localhost:3001/register', form);
       setForm(DEFAULT_FORM);
+      navigate('/');
     } catch (error) {
       console.log(error);
     }
