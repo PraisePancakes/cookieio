@@ -1,80 +1,74 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import LoginComponent from '../Components/LoginComponent';
+import Leaderboards from '../Assets/leaderboard-icon-13749.png';
+import Cookie from '../Assets/cookie-47942.png';
+import Users from '../Assets/users.png';
 
 const Login = () => {
-  const DEFAULT_FORM = {
-    username: '',
-    password: '',
-  };
-  const navigate = useNavigate();
-
-  const [form, setForm] = useState(DEFAULT_FORM);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post('http://localhost:3001/login', form);
-      setForm(DEFAULT_FORM);
-      localStorage.setItem('token', response.data.token);
-      window.location.reload();
-      navigate('/home');
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm((prevState) => {
-      return {
-        ...prevState,
-        [name]: value,
-      };
-    });
-  };
-
   return (
-    <div className="LOGIN__CONTAINER relative flex flex-col items-center ">
-      <div
+    <div className="LOGIN__CONTAINER relative max-w-full flex flex-col items-center ">
+      <section
         style={{ backgroundColor: '#7877E6' }}
         className="Top--Half-Box w-full h-[500px]"
-      ></div>
-      <div className="Login--Component relative h-[25rem] w-[22rem] bottom-[13rem] bg-white border flex flex-col items-center border-black">
-        <h1 className="Login--Component-Header text-2xl mt-3">
-          Log-in to Your Account
-        </h1>
-        <form
-          onSubmit={handleSubmit}
-          className="mt-3 flex flex-col items-center"
+      >
+        <h1
+          className="text-white mt-5 py-1 px-10 text-5xl w-full"
+          style={{
+            backgroundColor: '#7877E6',
+            fontFamily: 'var(--secondary-font)',
+          }}
         >
-          <label className="text-xl font-thin">Enter a Username </label>
-          <input
-            style={{ borderColor: '#7877E6' }}
-            className="border w-[18em] focus:outline-none px-5 mt-2"
-            type="username"
-            required
-            name="username"
-            value={form.username}
-            onChange={handleChange}
-          ></input>
-          <label className="text-xl font-thin">Enter a Password </label>
-          <input
-            style={{ borderColor: '#7877E6' }}
-            className="border w-[18em] focus:outline-none px-5 mt-2"
-            type="password"
-            required
-            name="password"
-            value={form.password}
-            onChange={handleChange}
-          ></input>
-          <button type="submit">LOG-IN</button>
-        </form>
-        <div className="relative w-full">
-          <hr className="w-full border border-slate-200 mt-10 absolute"></hr>
-          <h2 className="absolute left-[10rem] top-7 bg-white px-2">OR</h2>
+          WELCOME TO COOKIE<span className="text-violet-200">IO</span>
+        </h1>
+        <span className="text-white px-16 text-xl">
+          THE LARGEST{' '}
+          <span className="text-violet-800 text-2xl"> COOKIE CLICKER </span>{' '}
+          PLATFORM
+        </span>
+      </section>
+      <LoginComponent />
+      <section
+        className="border-b border-t w-full h-[500px] text-white "
+        style={{ backgroundColor: '#7877E6' }}
+      >
+        <h1 className=" text-7xl text-center mt-5">JOIN THE FUN</h1>
+        <div className="Steps--Row grid grid-cols-3 gap-[2rem] w-full mt-8 ">
+          <div className="Step--1-Col flex flex-col items-center text-center">
+            <span className="text-4xl border rounded-full w-11 px-3 bg-violet-600">
+              1
+            </span>
+            <h1 className="text-2xl underline">REGISTER</h1>
+            <p className="w-[15rem] mt-2 indent-2 text-lg">
+              Our system requires user registration to save the players data and
+              ultimately make the experience as fun as possible for you.{' '}
+              <span className="underline underline-offset-2">Register</span>{' '}
+              your account first.
+            </p>
+            <img src={Users} className="w-[7rem]"></img>
+          </div>
+          <div className="Step--2-Col flex flex-col items-center text-center">
+            <span className="text-4xl border rounded-full w-11 px-3 bg-violet-600 ">
+              2
+            </span>
+            <h1 className="text-2xl underline">LOGIN</h1>
+            <p className="w-[15rem] mt-2 indent-2 text-lg">
+              Login to play , see your stats , and view our leaderboards to
+              compete!
+            </p>
+            <img src={Leaderboards} className="w-[10rem] "></img>
+          </div>
+          <div className="Step--3-Col flex flex-col items-center text-center">
+            <span className="text-4xl border rounded-full w-11 px-3 bg-violet-600 ">
+              3
+            </span>
+            <h1 className="text-2xl underline">PLAY</h1>
+            <p className="w-[15rem] mt-2 indent-2 text-lg">
+              CLICK CLICK AWAY...
+            </p>
+            <img src={Cookie} className="w-[5rem] mt-5"></img>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

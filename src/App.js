@@ -1,11 +1,8 @@
-import Register from './Pages/Register';
 import React, { useState, useEffect } from 'react';
-import Login from './Pages/Login';
-import Home from './Pages/Home';
+import FooterComponent from './Components/FooterComponent';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { Home, Login, Register } from './Pages/index';
 
-//All header have --main
-//All Sub headers / p have --secondary
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
     !!localStorage.getItem('token')
@@ -33,7 +30,9 @@ function App() {
           ></Route>
         </Routes>
 
-        <div className="w-full text-white mx-10">Footer</div>
+        <div className="w-full text-white mx-10">
+          <FooterComponent />
+        </div>
       </div>
     </div>
   );

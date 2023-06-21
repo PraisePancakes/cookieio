@@ -5,10 +5,14 @@
 }
 body {
   font-family: var(--secondary-font);
-  background-color: black;
+  background-color: rgb(91, 119, 204);
 }
-h1 {
-  font-family: var(--main-font);
+
+.Error--Message {
+  font-family: var(--secondary-font);
+}
+.Success--Message {
+  font-family: var(--secondary-font);
 }
 @tailwind components;
 @tailwind utilities;
