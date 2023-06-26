@@ -3,7 +3,7 @@ import RegisterComponent from '../Components/RegisterComponent';
 
 const Register = () => {
   return (
-    <div className="REGISTER__CONTAINER relative max-w-full flex flex-col items-center ">
+    <div className="REGISTER__CONT relative max-w-full flex flex-col items-center ">
       <section
         style={{ backgroundColor: '#7877E6' }}
         className="Top--Half-Box w-full h-[500px]"

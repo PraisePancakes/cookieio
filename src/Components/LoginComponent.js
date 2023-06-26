@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
 const LoginComponent = () => {
@@ -84,7 +84,9 @@ const LoginComponent = () => {
       </form>
       <h1>
         Dont have an account?{' '}
-        <span className="underline text-gray-500">Register</span>
+        <Link to="/register">
+          <span className="underline text-gray-500">Register</span>
+        </Link>
       </h1>
       <div className="relative w-full">
         <hr className="w-full border border-slate-200 mt-10 absolute"></hr>

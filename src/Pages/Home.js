@@ -1,10 +1,14 @@
 import React from 'react';
-import jwt_decode from 'jwt-decode';
+
+import Navbar from '../Components/Navbar';
 
 const Home = () => {
-  const token = localStorage.getItem('token');
-  const decoded = jwt_decode(token);
-  return <div>{decoded.username}</div>;
+  return (
+    <div>
+      <Navbar />
+      <section className="HOME__PAGE_BODY-CONT"></section>
+    </div>
+  );
 };
 
 export default Home;

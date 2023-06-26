@@ -6,7 +6,7 @@ import Users from '../Assets/users.png';
 
 const Login = () => {
   return (
-    <div className="LOGIN__CONTAINER relative max-w-full flex flex-col items-center ">
+    <div className="LOGIN__CONT relative max-w-full flex flex-col items-center ">
       <section
         style={{ backgroundColor: '#7877E6' }}
         className="Top--Half-Box w-full h-[500px]"
@@ -44,7 +44,7 @@ const Login = () => {
               <span className="underline underline-offset-2">Register</span>{' '}
               your account first.
             </p>
-            <img src={Users} className="w-[7rem]"></img>
+            <img src={Users} alt="users" className="w-[7rem]"></img>
           </div>
           <div className="Step--2-Col flex flex-col items-center text-center">
             <span className="text-4xl border rounded-full w-11 px-3 bg-violet-600 ">
@@ -55,7 +55,11 @@ const Login = () => {
               Login to play , see your stats , and view our leaderboards to
               compete!
             </p>
-            <img src={Leaderboards} className="w-[10rem] "></img>
+            <img
+              src={Leaderboards}
+              alt="leaderboards"
+              className="w-[10rem] "
+            ></img>
           </div>
           <div className="Step--3-Col flex flex-col items-center text-center">
             <span className="text-4xl border rounded-full w-11 px-3 bg-violet-600 ">
@@ -65,7 +69,7 @@ const Login = () => {
             <p className="w-[15rem] mt-2 indent-2 text-lg">
               CLICK CLICK AWAY...
             </p>
-            <img src={Cookie} className="w-[5rem] mt-5"></img>
+            <img src={Cookie} alt="cookie" className="w-[5rem] mt-5"></img>
           </div>
         </div>
       </section>
