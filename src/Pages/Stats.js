@@ -1,10 +1,12 @@
 import React from 'react';
+import Navbar from '../Components/Navbar';
 
 const Stats = () => {
   return (
     <div>
+      <Navbar />
       <div>
-        <section className="mt-[5rem] mx-[5rem]">Stats</section>
+        <section className="pt-[5rem] px-[5rem]">Stats</section>
       </div>
     </div>
   );

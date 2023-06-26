@@ -1,10 +1,12 @@
 import React from 'react';
+import Navbar from '../Components/Navbar';
 
 const Upgrades = () => {
   return (
     <div>
+      <Navbar />;
       <div>
-        <section className="mt-[5rem] mx-[5rem]">Upgrades</section>
+        <section className="pt-[5rem] px-[5rem]">Upgrades</section>
       </div>
     </div>
   );

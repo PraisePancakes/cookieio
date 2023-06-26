@@ -92,7 +92,7 @@ const RegisterComponent = () => {
       </form>
       <h1>
         Already have an account?{' '}
-        <span className="underline text-gray-500">Register</span>
+        <span className="underline text-gray-500">Log In</span>
       </h1>
       <div className="relative w-full">
         <hr className="w-full border border-slate-200 mt-10 absolute"></hr>
