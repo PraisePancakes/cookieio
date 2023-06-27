@@ -53,10 +53,10 @@ const RegisterComponent = () => {
       )}
       <form
         onSubmit={handleSubmit}
-        className="mt-3 flex flex-col gap-5 items-center"
+        className="Register--Form-Box mt-3 flex flex-col gap-5 items-center"
       >
         <input
-          className="border w-[18em] focus:outline-none p-3 rounded-md mt-2 font-thin"
+          className="Email--Input-Box border w-[18em] focus:outline-none p-3 rounded-md mt-2 font-thin"
           type="email"
           placeholder="EMAIL"
           required
@@ -65,7 +65,7 @@ const RegisterComponent = () => {
           onChange={handleChange}
         ></input>
         <input
-          className="border w-[18em] focus:outline-none p-3 rounded-md mt-2 font-thin"
+          className="Username--Input-Box border w-[18em] focus:outline-none p-3 rounded-md mt-2 font-thin"
           type="username"
           placeholder="USERNAME"
           required
@@ -75,7 +75,7 @@ const RegisterComponent = () => {
         ></input>
 
         <input
-          className="border w-[18em] focus:outline-none p-3 rounded-md mt-2 font-thin"
+          className="Password--Input-Box border w-[18em] focus:outline-none p-3 rounded-md mt-2 font-thin"
           type="password"
           placeholder="PASSWORD"
           required
@@ -85,18 +85,22 @@ const RegisterComponent = () => {
         ></input>
         <button
           type="submit"
-          className="w-full p-2 rounded-md border border-black px-2 mt-3 hover:text-white hover:bg-black transition-colors duration-200"
+          className="Submit--Form-Btn w-full p-2 rounded-md border border-black px-2 mt-3 hover:text-white hover:bg-black transition-colors duration-200"
         >
           REGISTER
         </button>
       </form>
-      <h1>
+      <h1 className="Already--Link">
         Already have an account?{' '}
-        <span className="underline text-gray-500">Log In</span>
+        <span className="Already--Link-Decor underline text-gray-500">
+          Log In
+        </span>
       </h1>
-      <div className="relative w-full">
-        <hr className="w-full border border-slate-200 mt-10 absolute"></hr>
-        <h2 className="absolute left-[10rem] top-7 bg-white px-2">OR</h2>
+      <div className="OAuth--Separator relative w-full">
+        <hr className="OAuth--Line-hr w-full border border-slate-200 mt-10 absolute"></hr>
+        <h2 className="OAuth--Option-Text absolute left-[10rem] top-7 bg-white px-2">
+          OR
+        </h2>
       </div>
       {/*Implement Google Auth in future */}
     </div>

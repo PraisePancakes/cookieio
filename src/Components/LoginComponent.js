@@ -54,10 +54,10 @@ const LoginComponent = () => {
       )}
       <form
         onSubmit={handleSubmit}
-        className="mt-3 flex flex-col gap-5 items-center"
+        className="Login--Form-Box mt-3 flex flex-col gap-5 items-center"
       >
         <input
-          className="border w-[18em] focus:outline-none p-3 rounded-md mt-2 font-thin"
+          className="Username--Input-Box border w-[18em] focus:outline-none p-3 rounded-md mt-2 font-thin"
           type="username"
           placeholder="USERNAME"
           required
@@ -67,7 +67,7 @@ const LoginComponent = () => {
         ></input>
 
         <input
-          className="border w-[18em] focus:outline-none p-3 rounded-md mt-2 font-thin"
+          className="Password--Input-Box border w-[18em] focus:outline-none p-3 rounded-md mt-2 font-thin"
           type="password"
           placeholder="PASSWORD"
           required
@@ -77,20 +77,24 @@ const LoginComponent = () => {
         ></input>
         <button
           type="submit"
-          className="w-full p-2 rounded-md border border-black px-2 mt-3 hover:text-white hover:bg-black transition-colors duration-200"
+          className="Submit--Form-Btn w-full p-2 rounded-md border border-black px-2 mt-3 hover:text-white hover:bg-black transition-colors duration-200"
         >
           LOG-IN
         </button>
       </form>
-      <h1>
+      <h1 className="Null--Acc-Link">
         Dont have an account?{' '}
         <Link to="/register">
-          <span className="underline text-gray-500">Register</span>
+          <span className="Null--Acc-Link_Decor underline text-gray-500">
+            Register
+          </span>
         </Link>
       </h1>
-      <div className="relative w-full">
-        <hr className="w-full border border-slate-200 mt-10 absolute"></hr>
-        <h2 className="absolute left-[10rem] top-7 bg-white px-2">OR</h2>
+      <div className="OAuth--Separator relative w-full">
+        <hr className="OAuth--Line-Hr w-full border border-slate-200 mt-10 absolute"></hr>
+        <h2 className="OAuth--Option-Text absolute left-[10rem] top-7 bg-white px-2">
+          OR
+        </h2>
       </div>
       {/*Implement Google Auth in future */}
     </div>
