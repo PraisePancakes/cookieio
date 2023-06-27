@@ -3,13 +3,13 @@ import jwt_decode from 'jwt-decode';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  const token = sessionStorage.getItem('token');
+  const token = localStorage.getItem('token');
   const decoded = jwt_decode(token);
   const username = decoded.username;
 
   function handleLogOut() {
     window.location.reload();
-    sessionStorage.removeItem('token');
+    localStorage.removeItem('token');
   }
 
   const navLinks = [

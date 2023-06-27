@@ -4,29 +4,29 @@ import Navbar from '../Components/Navbar';
 import jwt_decode from 'jwt-decode';
 
 const Home = () => {
-  const [count, setCount] = useState(0);
-  const handleCookieClick = () => {
-    setCount(count + 1);
-  };
-  const token = sessionStorage.getItem('token');
+  const token = localStorage.getItem('token');
   const decoded = jwt_decode(token);
   const userId = decoded.userId;
 
+  const initialCount = localStorage.getItem(`clicks_${userId}`) || 0;
+  const [count, setCount] = useState(Number(initialCount));
+
+  const handleCookieClick = async () => {
+    setCount((prevCount) => prevCount + 1);
+  };
+
   useEffect(() => {
-    const sessionCleanup = async () => {
-      try {
-        await axios.patch(`http://localhost:3001/userClicks/${userId}`, {
+    const updateClicks = async () => {
+      const res = await axios.patch(
+        `http://localhost:3001/userClicks/${userId}`,
+        {
           count,
-        });
-      } catch (error) {
-        console.error('Failed to update user count : ', error);
-      }
+        }
+      );
+      localStorage.setItem(`clicks_${userId}`, res.data.clicks);
     };
-    return () => {
-      sessionCleanup();
-      console.log(count);
-    };
-  }, [count]);
+    updateClicks();
+  }, [count, userId]);
 
   return (
     <div>

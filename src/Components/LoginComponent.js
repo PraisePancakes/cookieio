@@ -18,7 +18,7 @@ const LoginComponent = () => {
     try {
       const response = await axios.post('http://localhost:3001/login', form);
       setForm(DEFAULT_FORM);
-      sessionStorage.setItem('token', response.data.token);
+      localStorage.setItem('token', response.data.token);
       setSuccess(response.data.message);
       window.location.reload();
       navigate('/home');

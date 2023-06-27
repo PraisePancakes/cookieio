@@ -6,11 +6,11 @@ import { Home, Login, Register, Cstyle, Stats, Upgrades } from './Pages/index';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
-    !!sessionStorage.getItem('token')
+    !!localStorage.getItem('token')
   );
 
   useEffect(() => {
-    sessionStorage.getItem('token');
+    localStorage.getItem('token');
   }, []);
 
   return (
