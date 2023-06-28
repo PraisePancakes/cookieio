@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import Cookie from '../Assets/cookie-23111.png';
 import jwt_decode from 'jwt-decode';
 
 const GameComponent = () => {
@@ -30,15 +30,14 @@ const GameComponent = () => {
 
   return (
     <div>
-      <div className="Game--Section-Cont px-[5rem] flex flex-col items-center gap-[20rem]">
+      <div className="Game--Section-Cont px-[5rem] flex flex-col items-center gap-[10rem]">
         <h1 className="Game--Header w-full text-4xl ">CLICK AWAY...</h1>
-        {count}
-        <button
-          onClick={handleCookieClick}
-          className="Game--Click-Btn border px-8 py-2"
-        >
-          CLICK
-        </button>
+        <div className="flex flex-col items-center gap-5">
+          <span className="text-3xl text-slate-200">COOKIES : {count}</span>
+          <button onClick={handleCookieClick} className="Game--Click-Btn">
+            <img className=" w-[15rem] hover:w-[25rem]" src={Cookie}></img>
+          </button>
+        </div>
       </div>
     </div>
   );

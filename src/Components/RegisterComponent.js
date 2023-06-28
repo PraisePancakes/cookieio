@@ -97,7 +97,7 @@ const RegisterComponent = () => {
         </span>
       </h1>
       <div className="OAuth--Separator relative w-full">
-        <hr className="OAuth--Line-hr w-full border border-slate-200 mt-10 absolute"></hr>
+        <hr className="OAuth--Line-Hr w-full border border-slate-200 mt-10 absolute"></hr>
         <h2 className="OAuth--Option-Text absolute left-[10rem] top-7 bg-white px-2">
           OR
         </h2>

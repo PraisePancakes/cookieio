@@ -17,11 +17,13 @@ const LeaderboardComponent = () => {
     };
     getUsers();
   }, []);
+
   const sortedUsers = [...listUsers].sort((a, b) => b.clicks - a.clicks);
+
   return (
     <div>
       <h1 className="Leaderboards--Header">LEADERBOARDS</h1>
-      <section className="Leaderboards--Data--Cont flex gap-10 text-white">
+      <section className="Leaderboards--Data--Cont flex gap-[5rem] text-white mt-2">
         <ul className="Players--Ul">
           <h1 className="Players--Header md:text-xl text-sm underline underline-offset-2">
             Players
@@ -38,7 +40,7 @@ const LeaderboardComponent = () => {
           </h1>
           {sortedUsers.map((user) => (
             <li key={user._id} className="Clicks--List-Items py-1">
-              {user.clicks}
+              {user.clicks === 0 ? 0 : user.clicks - 1}
             </li>
           ))}
         </ul>
